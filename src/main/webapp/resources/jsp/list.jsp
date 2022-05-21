@@ -3,23 +3,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.css">
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/script.js"></script>
-	<title>List</title>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.css">
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/script.js"></script>
+    <title>List</title>
 </head>
 <body>
 <h2>List</h2>
 <ol>
-	<c:forEach var="entry" items="${requestScope.list}">
-		<li>${entry.key}
-			<button type="button" class="simple" onclick="collapse(this)">[+]</button>
-			<ul class="collapsible">
-				<c:forEach var="inner" items="${entry.value}">
-					<li>${inner}</li>
-				</c:forEach>
-			</ul>
-		</li>
-	</c:forEach>
+    <c:forEach var="entry" items="${requestScope.list}">
+        <li>${entry.key}
+            <button type="button" class="simple" onclick="remove(this)">[x]</button>
+            <button type="button" class="simple" onclick="collapse(this)">[+]</button>
+            <ul class="collapsible">
+                <c:forEach var="inner" items="${entry.value}">
+                    <li>${inner}
+                        <button type="button" class="simple" onclick="remove(this)">[x]</button>
+                    </li>
+                </c:forEach>
+            </ul>
+        </li>
+    </c:forEach>
 </ol>
 </body>
 </html>

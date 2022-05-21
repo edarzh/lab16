@@ -1,11 +1,15 @@
 function collapse(button) {
-	let content = button.nextElementSibling;
+    let content = button.nextElementSibling;
 
-	if (content.style.display === "block") {
-		content.style.display = "none";
-		button.textContent = "[+]";
-	} else {
-		content.style.display = "block";
-		button.textContent = "[-]";
-	}
+    if (content.style.display === "block") {
+        content.style.display = "none";
+        button.textContent = "[+]";
+    } else {
+        content.style.display = "block";
+        button.textContent = "[-]";
+    }
+}
+
+function remove(button) {
+    button.parentNode.remove();
 }
